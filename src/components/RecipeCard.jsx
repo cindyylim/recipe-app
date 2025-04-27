@@ -1,8 +1,8 @@
 import { Heart, Video } from "lucide-react";
 
-const RecipeCard = ({ recipe }) => {
+const RecipeCard = ({ recipe, bgColor = "bg-[#ecf7d4]" }) => {
   return (
-    <div className="flex flex-col rounded-md bg-[#ecf7d4] overflow-hidden p-3 relative">
+    <div className={`flex flex-col rounded-md ${bgColor} overflow-hidden p-3 relative`}>
       <a href="#" className="relative h-32">
         <img
           src={recipe.strMealThumb}
@@ -23,6 +23,7 @@ const RecipeCard = ({ recipe }) => {
             <a
               className="text-sm tracking-tighter font-semibold"
               href={recipe.strSource}
+              target="_blank"
             >
               {recipe.strSource}
             </a>
@@ -34,6 +35,7 @@ const RecipeCard = ({ recipe }) => {
           <a
             className="text-sm tracking-tighter font-semibold"
             href={recipe.strYoutube}
+            target="_blank"
           >
             <Video size={16} />
             {recipe.strYoutube}

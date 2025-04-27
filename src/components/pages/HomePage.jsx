@@ -25,6 +25,8 @@ const HomePage = () => {
     }
   };
 
+  const bgColors = ["bg-[#ecf7d4]", "bg-[#f7e4d4]", "bg-[#d4e4f7]"];
+
   return (
     <div className="bg-[#faf9fb] p-10 flex-1">
       <div className="max-w-screen-lg mx-auto">
@@ -63,9 +65,9 @@ const HomePage = () => {
             <div className="col-span-full">No recipes found</div>
           )}
           {!loading &&
-            recipes.map((recipe) =>
+            recipes.map((recipe, index) =>
               recipe.strYoutube || recipe.strSource ? (
-                <RecipeCard key={recipe.idMeal} recipe={recipe} />
+                <RecipeCard key={recipe.idMeal} recipe={recipe} bgColor={bgColors[index % bgColors.length]} />
               ) : null
             )}
         </div>
