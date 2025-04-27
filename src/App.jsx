@@ -5,13 +5,16 @@ import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div>
+    <div className="flex">
       <Sidebar />
-      <Routes>
-        <Route path="/" element={<HomePage />}></Route>
-        <Route path="/favorites" element={<FavoritesPage />}></Route>
-      </Routes>
+      <main className="flex-1">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/favorites" element={<FavoritesPage />} />
+        </Routes>
+      </main>
     </div>
   );
 }
+
 export default App;
