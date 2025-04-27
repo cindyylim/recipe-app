@@ -1,6 +1,10 @@
 import { Heart, Video } from "lucide-react";
+import { useFavorites } from "../context/FavoritesContext";
 
 const RecipeCard = ({ recipe, bgColor = "bg-[#ecf7d4]" }) => {
+  const { favorites, toggleFavorite } = useFavorites();
+  const isFavorite = favorites.some((fav) => fav.idMeal === recipe.idMeal);
+
   return (
     <div className={`flex flex-col rounded-md ${bgColor} overflow-hidden p-3 relative`}>
       <a href="#" className="relative h-32">
@@ -9,8 +13,17 @@ const RecipeCard = ({ recipe, bgColor = "bg-[#ecf7d4]" }) => {
           alt="recipe img"
           className="rounded-md w-full h-full object-cover cursor-pointer"
         />
-        <div className="absolute top-1 right-2 bg-white rounded-full p-1 cursor-pointer flex items-center gap-1 text-sm">
-          <Heart size={16} className="hover:fill-red-500 hover:text-red-500" />
+        <div 
+          className="absolute top-1 right-2 bg-white rounded-full p-1 cursor-pointer flex items-center gap-1 text-sm"
+          onClick={(e) => {
+            e.preventDefault();
+            toggleFavorite(recipe);
+          }}
+        >
+          <Heart 
+            size={16} 
+            className={`${isFavorite ? "fill-red-500 text-red-500" : "hover:fill-red-500 hover:text-red-500"}`} 
+          />
         </div>
       </a>
       <div className="flex mt-1">
