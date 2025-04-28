@@ -15,7 +15,6 @@ const HomePage = () => {
         `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchQuery}`
       );
       const data = await res.json();
-      console.log(data);
       setRecipes(data.meals);
     } catch (error) {
       console.log(error);
