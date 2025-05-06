@@ -51,27 +51,6 @@ yarn dev
 
 4. Open your browser and navigate to `http://localhost:5173`
 
-## Project Structure
-
-```
-recipe-app/
-├── src/
-│   ├── components/
-│   │   ├── pages/
-│   │   │   ├── HomePage.jsx
-│   │   │   ├── FavoritesPage.jsx
-│   │   ├── RecipeCard.jsx
-│   │   └── Sidebar.jsx
-│   ├── context/
-│   │   └── FavoritesContext.jsx
-│   ├── App.jsx
-│   ├── main.jsx
-│   └── index.css
-├── public/
-├── package.json
-└── README.md
-```
-
 ## Features in Detail
 
 ### Home Page
