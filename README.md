@@ -60,7 +60,6 @@ recipe-app/
 │   │   ├── pages/
 │   │   │   ├── HomePage.jsx
 │   │   │   ├── FavoritesPage.jsx
-│   │   │   └── AuthPage.jsx
 │   │   ├── RecipeCard.jsx
 │   │   └── Sidebar.jsx
 │   ├── context/
